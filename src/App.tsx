@@ -1,6 +1,6 @@
 import { AboutMe } from './components/AboutMe/AboutMe.component.tsx';
 
-import './App.css';
+import './components/app/App.css';
 
 function App() {
     return (
