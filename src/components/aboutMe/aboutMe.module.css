@@ -1,30 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-body {
-  font-family: "Montserrat", sans-serif;
-  color: #111;
-  margin: 0;
-}
-
-.home {
+.mainAboutMe {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   gap: 60px;
 }
 
-.txt {
-  display: inherit;
-  flex-direction: column;
-  margin: 60px;
-}
-
-.containerImg {
-  width: 100%;
+.containerAboutImg {
   max-width: 556px;
 }
 
-.img {
+.aboutImg {
   height: 100vh;
+}
+
+.containerTxt {
+  display: inherit;
+  flex-direction: column;
+  margin: 60px;
 }
 
 .txtTitle {
@@ -39,32 +30,32 @@ body {
   line-height: 32px;
 }
 
-.link {
+.linkSocialNetwork, .linkMOC {
   color: inherit;
   font-weight: inherit;
 }
 
 @media (max-width: 900px) {
 
-  .home {
+  .mainAboutMe {
     flex-direction: column-reverse;
     align-items: center;
     margin: 10px;
     gap: 10px;
   }
 
-  .txt {
+  .containerTxt {
     margin: 10px;
   }
 
-  .img {
+  .aboutImg {
     height: auto;
-    width: 80%;
+    width: 100%;
     aspect-ratio: 4 / 4;
     border-radius: 30px;
   }
 
-  .containerImg {
+  .containerAboutImg {
     display: inherit;
     justify-content: center;
     width: auto;
@@ -83,8 +74,23 @@ body {
 
 @media (max-width: 430px) {
 
-  .home {
+  .mainAboutMe {
     gap: 2px;
+  }
+
+  .aboutImg {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    border-radius: 30px;
+  }
+
+  .containerAboutImg {
+    width: 100%;
+  }
+
+  .containerTxt {
+    margin: 0;
   }
 
   .txtTitle {
