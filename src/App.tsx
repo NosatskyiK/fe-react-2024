@@ -1,13 +1,9 @@
-import { AboutMe } from './components/AboutMe/AboutMe.component.tsx';
+import { AboutMe } from '@/components/aboutMe/AboutMe.component.tsx';
 
-import './components/app/App.css';
+import './App.css';
 
 function App() {
-    return (
-        <>
-            <AboutMe />
-        </>
-    );
+    return <AboutMe />;
 }
 
 export default App;

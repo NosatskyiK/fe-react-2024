@@ -1,4 +1,4 @@
-import title from '@/img/title.png';
+import title from '@/assets/img/title.png';
 
 import styles from './aboutMe.module.css';
 
@@ -34,7 +34,9 @@ export const AboutMe = function () {
                     &nbsp;.
                 </p>
             </div>
-            <img className={styles.img} src={title} alt="title img" />
+            <div className={styles.containerImg}>
+                <img className={styles.img} src={title} alt="title img" />
+            </div>
         </main>
     );
 };
