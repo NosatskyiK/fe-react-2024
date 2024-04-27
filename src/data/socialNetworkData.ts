@@ -2,7 +2,7 @@ import type SocialNetwork from '@/interface/interfaceSocialNetwork.ts';
 
 const SocialNetworkData: SocialNetwork[] = [
     {
-        img: './src/assets/img/footerImg/facebook.png',
+        img: './src/assets/img/footerImg/facebook.svg',
         url: 'https://www.facebook.com/profile.php?id=100015349961940',
         altName: 'Facebook',
     },
