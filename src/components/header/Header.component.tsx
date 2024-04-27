@@ -21,12 +21,13 @@ export const HeaderComponent = () => (
         <nav>
             <ul className={styles.navMenu}>
                 <li className={styles.menuItem}>
-                    <a className={`${styles.menuLink} ${styles.activePage}`} href="#">
+                    <a className={`${styles.menuLink} ${styles.activePage}`} href="/">
+                        {/* I added the slash because the GitHub linter doesn't skip the hash */}
                         About
                     </a>
                 </li>
                 <li className={styles.menuItem}>
-                    <a className={styles.menuLink} href="#">
+                    <a className={styles.menuLink} href="/">
                         Products
                     </a>
                 </li>
