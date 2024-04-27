@@ -5,11 +5,17 @@
 }
 
 .containerAboutImg {
-  max-width: 556px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 .aboutImg {
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .containerTxt {
@@ -45,7 +51,7 @@
   }
 
   .containerTxt {
-    margin: 10px;
+    margin: 0;
   }
 
   .aboutImg {
