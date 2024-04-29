@@ -1,10 +1,11 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #111;
   height: 80px;
-  width: 100%;
+  width: auto;
+  padding: 0 60px;
 }
 
 .logoMA {
@@ -28,23 +29,24 @@
 }
 
 .themeDayImg, .themeNightImg {
-  width: 30px;
-  height: 34px;
+  width: 20px;
+  height: 20px;
   padding: 10px 5px;
 }
 
 .vertLine {
   background-color: #FFF;
   width: 2px;
-  height: 34px;
+  height: 20px;
 }
 
 /* styles for navigation menu */
 
 .navMenu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
+  padding: 0;
 }
 
 .menuItem {
@@ -130,6 +132,10 @@
 }
 
 @media (max-width: 630px) {
+
+  .header {
+    padding: 0 20px;
+  }
 
   .switcherTheme, .navMenu, .userAuthorization {
     display: none;

@@ -2,19 +2,17 @@ interface Category {
     id: number;
     name: string;
     image: string;
-    creationAt: string;
-    updatedAt: string;
+    creationAt: Date;
+    updatedAt: Date;
 }
 
-interface Product {
+export interface Product {
     id: number;
     title: string;
     price: number;
     description: string;
     images: string[];
-    creationAt: string;
-    updatedAt: string;
+    creationAt: Date;
+    updatedAt: Date;
     category: Category;
 }
-
-export default Product;
