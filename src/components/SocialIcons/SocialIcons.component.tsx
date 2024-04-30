@@ -1,14 +1,14 @@
-import facebookImg from '@/assets/img/footerImg/facebook.png';
-import instagramImg from '@/assets/img/footerImg/instagram.png';
-import linkedInImg from '@/assets/img/footerImg/linkedIn.png';
-import { CreateSocialIcon } from '@/components/CreateSocialIcon/CreateSocialIcon.tsx';
+import React from 'react';
+
+import { SocialIcon } from '@/components/CreateSocialIcon/SocialIcon.tsx';
+import type { socialNetworkData } from '@/data/SocialNetworkData.ts';
 
 import styles from './socialIcons.module.css';
 
-export const SocialIcon = () => (
+export const SocialIcons: React.FC<{ data: typeof socialNetworkData }> = ({ data }) => (
     <ul className={styles.socialNetwork}>
-        <CreateSocialIcon img={facebookImg} url={'https://www.facebook.com/profile.php?id=100015349961940'} altName={'Facebook'} />
-        <CreateSocialIcon img={instagramImg} url={'https://www.instagram.com/nosatskyi.k/'} altName={'Instagram'} />
-        <CreateSocialIcon img={linkedInImg} url={'https://www.linkedin.com/in/костянтин-носацький-4617722a5/'} altName={'LinkedIn'} />
+        {data.map((social, index) => (
+            <SocialIcon key={index} img={social.img} url={social.url} altName={social.altName} />
+        ))}
     </ul>
 );
