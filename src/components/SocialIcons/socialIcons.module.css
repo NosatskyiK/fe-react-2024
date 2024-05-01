@@ -1,0 +1,7 @@
+.socialNetwork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  margin-top: 40px;
+}

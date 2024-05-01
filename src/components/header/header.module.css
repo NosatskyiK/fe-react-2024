@@ -1,4 +1,149 @@
 .header {
-  font-size: 34px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  height: 80px;
+  width: auto;
+  padding: 0 60px;
+}
+
+.logoMA {
+  width: 46px;
+  height: 46px;
+}
+
+/* styles for switcher theme */
+
+.switcherTheme {
+  display: inherit;
+  align-items: center;
+  gap: 10px;
+}
+
+.themeDayBtn, .themeNightBtn, .cartBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.themeDayImg, .themeNightImg {
+  width: 20px;
+  height: 20px;
+  padding: 10px 5px;
+}
+
+.vertLine {
+  background-color: #FFF;
+  width: 2px;
+  height: 20px;
+}
+
+/* styles for navigation menu */
+
+.navMenu {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 0;
+}
+
+.menuItem {
+  list-style: none;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.activePage {
+  font-weight: 700;
+}
+
+/* Store user authorization and cart */
+
+.accountOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.userAuthorization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.loginIn, .signUp {
+  background-color: #333;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.loginInImg {
+  width: 16px;
+  height: 16px;
+}
+
+.signUpImg {
+  width: 19px;
+  height: 15px;
+}
+
+.signUp {
+  background-color: #EF4934;
+}
+
+.loginIn {
+  background-color: #333;
+}
+
+.cartWhite {
+  width: 19px;
+  height: 18px;
+}
+
+/* burger menu */
+
+.burgerMenu {
+  display: none;
+}
+
+.burgerLine {
+  width: 23px;
+  height: 2px;
+  background-color: #FFF;
+}
+
+@media (max-width: 630px) {
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .switcherTheme, .navMenu, .userAuthorization {
+    display: none;
+  }
+
+  .burgerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 }

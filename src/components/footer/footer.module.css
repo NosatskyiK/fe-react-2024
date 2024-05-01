@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+}
+
+.horizontalLine {
+  width: 90%;
+  margin: 0 60px;
+  background-color: #CCC;
+}
+
+.footerDescription {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.footerLinkMA {
+  color: #EF4934;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+  .horizontalLine {
+    margin: 0 10px;
+    width: 95%;
+  }
+
+  .footerDescription {
+    font-size: 16px;
+    margin: 0 10px 10px;
+  }
+}

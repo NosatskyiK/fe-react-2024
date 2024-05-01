@@ -5,11 +5,17 @@
 }
 
 .containerAboutImg {
-  max-width: 556px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 .aboutImg {
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .containerTxt {
@@ -40,12 +46,12 @@
   .mainAboutMe {
     flex-direction: column-reverse;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
     gap: 10px;
   }
 
   .containerTxt {
-    margin: 10px;
+    margin: 0;
   }
 
   .aboutImg {
