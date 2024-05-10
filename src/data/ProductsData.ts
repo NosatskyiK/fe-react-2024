@@ -12,7 +12,7 @@ export const productsData: Product[] = [
         category: {
             id: 1,
             name: 'Clothes',
-            // eslint-disable-next-line sonarjs/no-duplicate-string
+            //  eslint-disable-next-line sonarjs/no-duplicate-string
             image: 'https://i.imgur.com/QkIa5tT.jpeg',
             creationAt: new Date('2024-04-26T08:20:48.094Z'),
             updatedAt: new Date('2024-04-26T08:20:48.094Z'),
