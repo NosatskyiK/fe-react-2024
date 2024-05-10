@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 275px;
+  height: 344px;
+  border-radius: 20px;
+  border: solid 1px #CCC;
+  padding: 20px 15px 0;
+}
+
+.cardImage {
+  width: 201px;
+  height: 205px;
+  border-radius: 20px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 25px;
+  margin: 0;
+}
+
+.cardPrice {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.cardPrice::after {
+  content: "\20B4";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+.cardBuy {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,12 +1,16 @@
+import React from 'react';
+
 import cartWhite from '@/assets/img/headerImg/cartWhite.png';
 import login from '@/assets/img/headerImg/login.png';
 import logoMA from '@/assets/img/headerImg/logoMA.png';
 import moon from '@/assets/img/headerImg/moon.png';
 import signUp from '@/assets/img/headerImg/signUp.png';
 import sun from '@/assets/img/headerImg/sun.png';
+import type { InterfacePageChange } from '@/interface/interfacePageChange.ts';
 
 import styles from './header.module.css';
-export const HeaderComponent = () => (
+
+export const HeaderComponent: React.FC<InterfacePageChange> = ({ onPageChange, activePage }) => (
     <header className={styles.header}>
         <img className={styles.logoMA} src={logoMA} alt="Logo Masters academy" />
         <div className={styles.switcherTheme}>
@@ -21,15 +25,20 @@ export const HeaderComponent = () => (
         <nav>
             <ul className={styles.navMenu}>
                 <li className={styles.menuItem}>
-                    <a className={`${styles.menuLink} ${styles.activePage}`} href="/">
-                        {/* I added the slash because the GitHub linter doesn't skip the hash */}
+                    <button
+                        className={`${styles.menuBtn} ${activePage === 'about' ? styles.activePage : ''}`}
+                        onClick={() => onPageChange('about')}
+                    >
                         About
-                    </a>
+                    </button>
                 </li>
                 <li className={styles.menuItem}>
-                    <a className={styles.menuLink} href="/">
+                    <button
+                        className={`${styles.menuBtn} ${activePage === 'products' ? styles.activePage : ''}`}
+                        onClick={() => onPageChange('products')}
+                    >
                         Products
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>
