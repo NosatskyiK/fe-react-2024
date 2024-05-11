@@ -1,5 +1,5 @@
 import type { Product } from '@/interface/interfaceProductCategory.ts';
-export const productsData: Product[] = [
+export const products: Product[] = [
     {
         id: 3,
         title: 'Classic Heather Gray Hoodie',

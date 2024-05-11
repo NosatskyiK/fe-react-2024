@@ -1,21 +1,19 @@
 import React from 'react';
 
 import { Cart } from '@/components/cart/Cart.component.tsx';
-import type { productsData } from '@/data/ProductsData.ts';
+import type { Product } from '@/interface/interfaceProductCategory.ts';
 
 import styles from './productCard.module.css';
 
-export const ProductCard: React.FC<{ data: typeof productsData }> = ({ data }) => (
+export const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
     <>
-        {data.map((props, index) => (
-            <div className={styles.card} key={index}>
-                <img className={styles.cardImage} src={props.images} alt="Product" />
-                <h2 className={styles.cardTitle}>{props.title}</h2>
-                <div className={styles.cardBuy}>
-                    <span className={styles.cardPrice}>{props.price} </span>
-                    <Cart />
-                </div>
+        <div className={styles.card}>
+            <img className={styles.cardImage} src={product.images} alt="Product" />
+            <h2 className={styles.cardTitle}>{product.title}</h2>
+            <div className={styles.cardBuy}>
+                <span className={styles.cardPrice}>{product.price} </span>
+                <Cart />
             </div>
-        ))}
+        </div>
     </>
 );
