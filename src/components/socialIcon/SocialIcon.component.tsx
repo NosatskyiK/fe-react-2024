@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { SocialNetwork } from '@/interface/interfaceSocialNetwork.ts';
 
-import styles from './SocialIcon.module.css';
+import styles from './socialIcon.module.css';
 
 export const SocialIcon: React.FC<SocialNetwork> = (props) => (
     <li className={styles.socialItem}>

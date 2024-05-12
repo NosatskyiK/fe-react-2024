@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SocialIcon } from '@/components/CreateSocialIcon/SocialIcon.tsx';
+import { SocialIcon } from '@/components/socialIcon/SocialIcon.component.tsx';
 import type { socialNetworkData } from '@/data/SocialNetworkData.ts';
 
 import styles from './socialIcons.module.css';

@@ -1,4 +1,4 @@
-import { SocialIcons } from '@/components/SocialIcons/SocialIcons.component.tsx';
+import { SocialIcons } from '@/components/socialIcons/SocialIcons.component.tsx';
 import { socialNetworkData } from '@/data/SocialNetworkData.ts';
 
 import styles from './footer.module.css';

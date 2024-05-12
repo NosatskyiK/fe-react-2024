@@ -53,12 +53,14 @@
   list-style: none;
 }
 
-.menuLink {
-  text-decoration: none;
+.menuBtn {
   color: #FFF;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  background-color: unset;
+  border: none;
+  cursor: pointer;
 }
 
 .activePage {
