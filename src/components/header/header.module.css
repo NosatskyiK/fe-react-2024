@@ -35,9 +35,28 @@
 }
 
 .vertLine {
-  background-color: #FFF;
+  background-color: #656565;
   width: 2px;
   height: 20px;
+}
+
+.svgThemeButton {
+  width: 20px;
+  height: 20px;
+}
+
+.pathSvgTheme {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.activeButtonTheme {
+  stroke: #FFF;
+}
+
+.inactiveButtonTheme {
+  stroke: #656565;
 }
 
 /* styles for navigation menu */

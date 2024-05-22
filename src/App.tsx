@@ -10,16 +10,17 @@ import './App.css';
 
 function App() {
     const [activePage, setActivePage] = useState('about');
+    const [theme, setTheme] = useState('light');
 
     return (
-        <>
-            <HeaderComponent onPageChange={setActivePage} activePage={activePage} />
+        <div className={`${theme}Theme`}>
+            <HeaderComponent changeTheme={setTheme} activeTheme={theme} onPageChange={setActivePage} activePage={activePage} />
             <>
                 {activePage === 'about' && <AboutMe />}
                 {activePage === 'products' && <ProductList products={products} />}
             </>
             <FooterComponent />
-        </>
+        </div>
     );
 }
 

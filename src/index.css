@@ -1,0 +1,47 @@
+:root {
+  --txt-primary-light: #111;
+  --txt-primary-dark: #CCC;
+
+  --txt-secondary-light: #656565;
+  --txt-secondary-dark: #FFF;
+
+  --bg-primary-light: #FFF;
+  --bg-primary-dark: #111;
+
+  --bg-secondary-light: #F1F1F1;
+  --bg-secondary-dark: #333;
+
+  --color-border-button-light: #E1E1E1;
+  --color-border-button-dark: #656565;
+
+  --color-border-card-light: #CCC;
+  --color-border-card-dark: #333;
+
+  --border-filter-button-light: #FFF;
+  --border-filter-button-dark: #111;
+
+  --cart-theme-light: #111;
+  --cart-theme-dark: #FFF;
+}
+
+.lightTheme {
+  --txt-primary: var(--txt-primary-light);
+  --txt-secondary: var(--txt-secondary-light);
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --color-border-button: var(--color-border-button-light);
+  --color-border-card: var(--color-border-button-light);
+  --border-filter-button: var(--border-filter-button-light);
+  --cart: var(--cart-theme-light);
+}
+
+.darkTheme {
+  --txt-primary: var(--txt-primary-dark);
+  --txt-secondary: var(--txt-secondary-dark);
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --color-border-button: var(--color-border-button-dark);
+  --color-border-card: var(--color-border-button-dark);
+  --border-filter-button: var(--border-filter-button-dark);
+  --cart: var(--cart-theme-dark);
+}

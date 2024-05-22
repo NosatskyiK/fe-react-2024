@@ -7,7 +7,7 @@
 .horizontalLine {
   width: 90%;
   margin: 0 60px;
-  background-color: #CCC;
+  border: solid 1px var(--bg-secondary);
 }
 
 .footerDescription {
