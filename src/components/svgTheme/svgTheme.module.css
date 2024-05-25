@@ -1,0 +1,18 @@
+.svgThemeButton {
+  width: 20px;
+  height: 20px;
+}
+
+.pathSvgTheme {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+}
+
+.activeButtonTheme {
+  stroke: #F1F1F1;
+}
+
+.inactiveButtonTheme {
+  stroke: #656565;
+}

@@ -28,35 +28,10 @@
   padding: 0;
 }
 
-.themeDayImg, .themeNightImg {
-  width: 20px;
-  height: 20px;
-  padding: 10px 5px;
-}
-
 .vertLine {
-  background-color: #656565;
+  background-color: var(--txt-secondary-light);
   width: 2px;
   height: 20px;
-}
-
-.svgThemeButton {
-  width: 20px;
-  height: 20px;
-}
-
-.pathSvgTheme {
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.activeButtonTheme {
-  stroke: #FFF;
-}
-
-.inactiveButtonTheme {
-  stroke: #656565;
 }
 
 /* styles for navigation menu */

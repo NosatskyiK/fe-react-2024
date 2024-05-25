@@ -39,6 +39,9 @@
   top: 0;
   border-radius: 20px;
   z-index: 5;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .listCurrent, .listBody {

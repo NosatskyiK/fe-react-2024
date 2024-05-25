@@ -6,32 +6,30 @@ export const SortList = () => {
     const [willShowList, setShowList] = useState(false);
     const [selectedValue, setSelectedValue] = useState('Price (High - Low)');
 
-    const toggleList = () => setShowList(!willShowList);
-
     const listItems = ['Price (High - Low)', 'Price (Low - High)', 'Newest', 'Oldest'];
 
     return (
         <div className={styles.sort}>
             <span className={styles.sortLabel}>Sort by:</span>
             <div className={styles.sortList}>
-                <button className={styles.listCurrent} onClick={toggleList}>
+                <button className={styles.listCurrent} onClick={() => setShowList(!willShowList)}>
                     {selectedValue}
                 </button>
                 {willShowList && (
-                    <div className={styles.listBody}>
+                    <ul className={styles.listBody}>
                         {listItems.map((item) => (
-                            <div
+                            <li
                                 key={item}
                                 className={styles.listItem}
                                 onClick={() => {
                                     setSelectedValue(item);
-                                    toggleList();
+                                    setShowList(!willShowList);
                                 }}
                             >
                                 {item}
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 )}
             </div>
         </div>
