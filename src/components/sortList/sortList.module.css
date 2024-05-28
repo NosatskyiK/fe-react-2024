@@ -50,8 +50,8 @@
 }
 
 .listCurrent:hover, .listItem:hover {
-  background-color: #D43824;
-  color: #FFF;
+  background-color: var(--background-button);
+  color: var(--bg-primary-light);
   border: 1px solid var(--border-filter-button);
 }
 

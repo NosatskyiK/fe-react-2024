@@ -10,9 +10,9 @@
 }
 
 .activeButtonTheme {
-  stroke: #F1F1F1;
+  stroke: var(--bg-secondary-light);
 }
 
 .inactiveButtonTheme {
-  stroke: #656565;
+  stroke: var(--txt-secondary-light);
 }

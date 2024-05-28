@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
+  background-color: var(--bg-primary-dark);
   height: 80px;
   width: auto;
   padding: 0 60px;
@@ -78,7 +78,7 @@
 }
 
 .loginIn, .signUp {
-  background-color: #333;
+  background-color: var(--bg-secondary-dark);
   border-radius: 40px;
   font-size: 16px;
   font-weight: 500;
@@ -103,11 +103,11 @@
 }
 
 .signUp {
-  background-color: #EF4934;
+  background-color: var(--background-button);
 }
 
 .loginIn {
-  background-color: #333;
+  background-color: var(--bg-secondary-dark);
 }
 
 .cartWhite {
@@ -124,7 +124,7 @@
 .burgerLine {
   width: 23px;
   height: 2px;
-  background-color: #FFF;
+  background-color: var(--bg-primary-light);
 }
 
 @media (max-width: 630px) {
