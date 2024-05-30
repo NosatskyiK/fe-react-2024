@@ -7,3 +7,9 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #111;
 }
+
+.lightTheme, .darkTheme {
+  background-color: var(--bg-primary);
+  color: var(--txt-primary);
+  transition: background-color 300ms, color 300ms;
+}

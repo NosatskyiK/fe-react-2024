@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import cart from '@/assets/img/cart.svg';
+import { SvgCart } from '@/components/svgCart/SvgCart.component.tsx';
 
 import styles from './cart.module.css';
 
@@ -9,7 +9,7 @@ export const Cart = () => {
     return (
         <div>
             <button className={styles.cartButton} onClick={() => setCount(!hasCount)}>
-                <img className={styles.cartImage} src={cart} alt="cart" />
+                <SvgCart />
                 {hasCount && <div className={styles.circleCounter}>1</div>}
             </button>
         </div>

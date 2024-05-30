@@ -12,7 +12,7 @@ export const AboutMe = () => (
             </p>
             <p className={styles.txtParagraph}>
                 This page was developed during the course&nbsp;
-                <a className={styles.linkMOC} href="https://www.mastersacademy.education/frontend-react-it">
+                <a className={styles.link} href="https://www.mastersacademy.education/frontend-react-it">
                     &lsquo;Intro to React&rsquo;
                 </a>
                 &nbsp;from Masters Academy in 2024.
@@ -23,11 +23,11 @@ export const AboutMe = () => (
             </p>
             <p className={styles.txtParagraph}>
                 You can contact me via&nbsp;
-                <a className={styles.linkSocialNetwork} href="https://t.me/kostyaa_n">
+                <a className={styles.link} href="https://t.me/kostyaa_n">
                     Telegram
                 </a>
                 &nbsp;and check out my&nbsp;
-                <a className={styles.linkSocialNetwork} href="https://github.com/NosatskyiK">
+                <a className={styles.link} href="https://github.com/NosatskyiK">
                     GitHub
                 </a>
                 &nbsp;.
