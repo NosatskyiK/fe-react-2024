@@ -1,9 +1,32 @@
-.productList {
+.productList, .pagination {
   display: flex;
+  margin: 60px;
+}
+
+.productList {
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 60px;
   gap: 25px;
+}
+
+.pagination {
+  justify-content: center;
+  gap: 5px;
+}
+
+.paginationButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-button);
+  background-color: var(--bg-primary);
+  cursor: pointer;
+  color: var(--txt-secondary);
+}
+
+.paginationButton:hover {
+  background-color: var(--background-button);
+  color: #FFF;
 }
 
 @media (max-width: 768px) {
