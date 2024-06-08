@@ -7,7 +7,7 @@
   border-radius: 20px;
   border: solid 1px var(--color-border-button);
   padding: 20px 15px 0;
-  color: var(--cart);
+  color: var(--txt-primary);
 }
 
 .cardImage {
@@ -21,6 +21,7 @@
   font-weight: 600;
   line-height: 25px;
   margin: 0;
+  color: var(--txt-primary);
 }
 
 .cardPrice {
@@ -39,4 +40,13 @@
 .cardBuy {
   display: flex;
   justify-content: space-between;
+}
+
+.cardButton {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  cursor: pointer;
 }

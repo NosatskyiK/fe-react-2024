@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 
+import { FiltersBar } from '@/components/filtersBar/FiltersBar.component.tsx';
 import { ProductCard } from '@/components/productCard/ProductCard.component.tsx';
 import type { ProductListProps } from '@/interface/interfaceProductFilters.ts';
 
 import styles from './productList.module.css';
 
-export const ProductList: React.FC<ProductListProps> = ({ products, selectedCategory, sortCriteria }) => {
+export const ProductList: React.FC<ProductListProps> = ({ products }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [sortCriteria, setSortCriteria] = useState('Price (High - Low)');
 
     const filteredProducts = selectedCategory ? products.filter((product) => product.category.name === selectedCategory) : products;
 
@@ -38,6 +41,7 @@ export const ProductList: React.FC<ProductListProps> = ({ products, selectedCate
 
     return (
         <>
+            <FiltersBar onCategoryChange={setSelectedCategory} onSortChange={setSortCriteria} />
             <section className={styles.productList}>
                 {currentItems.map((product, index) => (
                     <ProductCard key={index} product={product} />
@@ -52,7 +56,11 @@ export const ProductList: React.FC<ProductListProps> = ({ products, selectedCate
                     &#60;
                 </button>
                 {Array.from({ length: totalPages }, (_, index) => (
-                    <button className={styles.paginationButton} key={index} onClick={() => setCurrentPage(index + 1)}>
+                    <button
+                        className={`${styles.paginationButton} ${index + 1 === currentPage ? styles.activePage : ''}`}
+                        key={index}
+                        onClick={() => setCurrentPage(index + 1)}
+                    >
                         {index + 1}
                     </button>
                 ))}
