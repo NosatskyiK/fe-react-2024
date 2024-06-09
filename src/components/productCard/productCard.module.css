@@ -49,4 +49,14 @@
   font-weight: inherit;
   text-align: inherit;
   cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 658px) {
+
+  .cardImage {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
 }
