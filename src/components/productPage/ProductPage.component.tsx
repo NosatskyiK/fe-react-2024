@@ -24,12 +24,12 @@ export const ProductPage: React.FC = () => {
                             key={item}
                             className={`${styles.secondaryImage} ${item === imageTitle ? styles.activeImage : ''}`}
                             src={item}
-                            alt=""
+                            alt="Product"
                             onClick={() => setImageTitle(item)}
                         />
                     ))}
                 </div>
-                <img className={styles.titleImage} src={imageTitle} alt="" />
+                <img className={styles.titleImage} src={imageTitle} alt="Product" />
             </div>
             <div className={styles.productTxt}>
                 <div className={styles.title}>
