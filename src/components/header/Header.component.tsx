@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 
@@ -11,7 +12,7 @@ import type { InterfacePageChange } from '@/interface/interfacePageChange.ts';
 
 import styles from './header.module.css';
 
-export const HeaderComponent: React.FC<InterfacePageChange> = ({ onPageChange, activePage, changeTheme, activeTheme }) => (
+export const HeaderComponent: React.FC<InterfacePageChange> = ({ changeTheme, activeTheme }) => (
     <header className={styles.header}>
         <img className={styles.logoMA} src={logoMA} alt="Logo Masters academy" />
         <div className={styles.switcherTheme}>
@@ -32,20 +33,14 @@ export const HeaderComponent: React.FC<InterfacePageChange> = ({ onPageChange, a
         <nav>
             <ul className={styles.navMenu}>
                 <li className={styles.menuItem}>
-                    <button
-                        className={clsx(styles.menuBtn, { [styles.activePage]: activePage === 'about' })}
-                        onClick={() => onPageChange('about')}
-                    >
+                    <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/">
                         About
-                    </button>
+                    </NavLink>
                 </li>
                 <li className={styles.menuItem}>
-                    <button
-                        className={clsx(styles.menuBtn, { [styles.activePage]: activePage === 'products' })}
-                        onClick={() => onPageChange('products')}
-                    >
+                    <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/product_list">
                         Products
-                    </button>
+                    </NavLink>
                 </li>
             </ul>
         </nav>

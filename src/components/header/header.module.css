@@ -52,16 +52,16 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
-  background-color: unset;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .activePage {
   font-weight: 700;
 }
 
-/* Store user authorization and cart */
+/* Store productPage authorization and cart */
 
 .accountOptions {
   display: flex;

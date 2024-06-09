@@ -29,6 +29,11 @@
   color: #FFF;
 }
 
+.activePage {
+  background-color: var(--background-button);
+  color: #FFF;
+}
+
 @media (max-width: 768px) {
 
   .productList {

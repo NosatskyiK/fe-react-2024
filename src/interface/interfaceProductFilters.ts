@@ -2,8 +2,6 @@ import type { Product } from '@/interface/interfaceProductCategory.ts';
 
 export interface ProductListProps {
     products: Product[];
-    selectedCategory: string | null;
-    sortCriteria: string;
 }
 
 export interface SortListProps {
@@ -11,6 +9,6 @@ export interface SortListProps {
 }
 
 export interface FiltersBarProps {
-    onCategoryChange: (category: string | null) => void;
+    onCategoryChange: (onCategoryChange: string) => void;
     onSortChange: (sortCriteria: string) => void;
 }
