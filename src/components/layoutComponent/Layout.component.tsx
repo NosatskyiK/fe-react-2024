@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -8,8 +8,14 @@ import { HeaderComponent } from '@/components/header/Header.component.tsx';
 
 export const LayoutPage = () => {
     const [theme, setTheme] = useState('light');
-    const themeClass = clsx(`${theme}Theme`);
 
+    useEffect(() => {
+        const themeUser = localStorage.getItem('themeUser');
+        if (themeUser) {
+            setTheme(themeUser);
+        }
+    }, []);
+    const themeClass = clsx(`${theme}Theme`);
     return (
         <div className={themeClass}>
             <HeaderComponent changeTheme={setTheme} activeTheme={theme} />

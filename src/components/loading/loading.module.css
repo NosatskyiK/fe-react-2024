@@ -1,0 +1,29 @@
+.containerLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.loader {
+  letter-spacing: 10px;
+  color: #EF4934;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.loadingLine {
+  width: 290px;
+  border-radius: 5px;
+  height: 5px;
+  background-color: #EF4934;
+  box-sizing: border-box;
+  animation: animationLoader 3s ease-in-out infinite;
+}
+
+@keyframes animationLoader {
+  0% { width: 10px}
+  50% { width: 290px}
+  100% { width: 10px}
+}

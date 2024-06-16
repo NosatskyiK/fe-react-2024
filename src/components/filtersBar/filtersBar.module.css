@@ -41,6 +41,10 @@
   box-sizing: border-box;
 }
 
+.searchInput:focus {
+  outline: none;
+}
+
 .searchButton {
   position: absolute;
   top: 0;
@@ -51,6 +55,7 @@
   height: 38px;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 /* filter buttons */
