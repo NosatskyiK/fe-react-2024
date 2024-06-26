@@ -16,3 +16,7 @@ export interface Product {
     updatedAt: Date;
     category: Category;
 }
+
+export interface Data {
+    products: Product[];
+}

@@ -18,14 +18,20 @@ export const HeaderComponent: React.FC<InterfacePageChange> = ({ changeTheme, ac
         <div className={styles.switcherTheme}>
             <button
                 className={clsx(styles.themeDayBtn, { [styles.activeTheme]: activeTheme === 'light' })}
-                onClick={() => changeTheme('light')}
+                onClick={() => {
+                    changeTheme('light');
+                    localStorage.setItem('themeUser', 'light');
+                }}
             >
                 <SvgLightThemeIcon activeTheme={activeTheme} />
             </button>
             <div className={styles.vertLine}></div>
             <button
                 className={clsx(styles.themeNightBtn, { [styles.activeTheme]: activeTheme === 'dark' })}
-                onClick={() => changeTheme('dark')}
+                onClick={() => {
+                    changeTheme('dark');
+                    localStorage.setItem('themeUser', 'dark');
+                }}
             >
                 <SvgDarkThemeIcon activeTheme={activeTheme} />
             </button>
@@ -38,7 +44,7 @@ export const HeaderComponent: React.FC<InterfacePageChange> = ({ changeTheme, ac
                     </NavLink>
                 </li>
                 <li className={styles.menuItem}>
-                    <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/product_list">
+                    <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/products">
                         Products
                     </NavLink>
                 </li>
