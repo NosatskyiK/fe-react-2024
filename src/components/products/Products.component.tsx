@@ -9,30 +9,19 @@ export const Products = () => {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState('');
     const [searchInput, setSearchInput] = useState('');
-    const [totalPage, setTotalPage] = useState(1);
+    const [totalPage, setTotalPage] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const countProductsOnPage = 8;
     const [isLoading, setLoading] = useState(true);
     const [filter, setFilter] = useState(0);
-    // eslint-disable-next-line sonarjs/no-duplicate-string
-    const [sortOption, setSortOption] = useState('Price (High - Low)');
-
-    useEffect(() => {
-        const getAllProducts = async () => {
-            try {
-                const response = await fetch(`https://ma-backend-api.mocintra.com/api/v1/products`);
-                const result = await response.json();
-                setTotalPage(Math.ceil(result.total / countProductsOnPage));
-            } catch (error) {
-                console.error(`Error get all products:`, error);
-            }
-        };
-        getAllProducts();
-    }, []);
+    const [sortOption, setSortOption] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const getAllProduct = await fetch(`https://ma-backend-api.mocintra.com/api/v1/products`);
+                const allProduct = await getAllProduct.json();
+                setTotalPage(Math.ceil(allProduct.total / countProductsOnPage));
                 const offset = (currentPage - 1) * countProductsOnPage;
                 const sortField = getSortFieldFromOption(sortOption);
                 const sortOrder = getSortOrderFromOption(sortOption);

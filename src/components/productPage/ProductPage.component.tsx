@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { SvgCart } from '@/components/svgCart/SvgCart.component.tsx';
-import { products } from '@/data/ProductsData.ts';
+import type { Product } from '@/interface/interfaceProductCategory.ts';
 
 import styles from './productPage.module.css';
 
-export const ProductPage: React.FC = () => {
+export const ProductPage = () => {
     const navigate = useNavigate();
-    const { id } = useParams<{ id: string }>();
-    const product = products.find((p) => p.id === Number(id));
+    const location = useLocation();
+    const { product } = location.state as { product: Product };
     const [imageTitle, setImageTitle] = useState(product ? product.images[0] : '');
-
     if (!product) {
-        return <span>Product not found</span>;
+        return <h2 className={styles.errorMessage}>Product not found!</h2>;
     }
     return (
         <section className={styles.product}>

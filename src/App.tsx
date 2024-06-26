@@ -13,9 +13,9 @@ function App() {
         <Routes>
             <Route path={'/'} element={<LayoutPage />}>
                 <Route index element={<AboutMe />} />
-                <Route path={'/products'} element={<Products />} />
-                <Route path={'/product_page/:id'} element={<ProductPage />} />
-                <Route path={'/*'} element={<PageNotFound />} />
+                <Route path={'products'} element={<Products />} />
+                <Route path={'product_page/:id'} element={<ProductPage />} />
+                <Route path={'*'} element={<PageNotFound />} />
             </Route>
         </Routes>
     );

@@ -18,7 +18,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
     const filterButtonsObject: FiltersButtons[] = [
         {
             name: 'Shoes',
-            categoryId: 3,
+            categoryId: 4,
         },
         {
             name: 'Electronics',

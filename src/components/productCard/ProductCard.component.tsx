@@ -11,7 +11,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     return (
         <div className={styles.card}>
             <img className={styles.cardImage} src={product.images[0]} alt="Product" />
-            <button className={styles.cardButton} onClick={() => navigate(`/product_page/${product.id}`)}>
+            <button className={styles.cardButton} onClick={() => navigate(`/product_page/${product.id}`, { state: { product } })}>
                 <h2 className={styles.cardTitle}>{product.title}</h2>
             </button>
             <div className={styles.cardBuy}>
