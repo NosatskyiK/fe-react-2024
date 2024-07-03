@@ -5,7 +5,7 @@
 }
 
 .filtersBar {
-  margin: 60px;
+  margin: 20px 60px;
 }
 
 .searchInput[placeholder], .filterButton, .labelSortList {
