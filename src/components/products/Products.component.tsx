@@ -35,7 +35,7 @@ export const Products = () => {
                 const result = await response.json();
                 setData(result.products);
                 setCurrentCountProduct(result.total);
-                setTimeout(() => setLoading(false), 1000);
+                setLoading(false);
             } catch (error) {
                 console.error(`Error fetching data:`, error);
             }

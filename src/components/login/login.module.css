@@ -1,0 +1,89 @@
+/* general settings */
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 95%;
+  max-width: 824px;
+}
+
+.inputPassword, .inputEmail {
+  width: 95%;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+/* fields input */
+
+.passwordContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.inputEmail::placeholder, .inputPassword::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.inputEmail, .inputPassword {
+  padding-left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--txt-primary);
+  background-color: var(--bg-primary);
+  height: 45px;
+  border-radius: 50px;
+  border: 1px solid var(--color-border-button);
+}
+
+.inputEmail:focus, .inputPassword:focus {
+  outline: none;
+}
+
+.validInput {
+  border: 1px solid #3E9F22;
+}
+
+.invalidInput {
+  border: 1px solid #EF4934;
+}
+
+/* button */
+
+.showPasswordButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: unset;
+  color: unset;
+}
+
+@media (max-width: 630px) {
+
+  .inputContainer, .inputEmail, .inputPassword {
+    width: 95%;
+    max-width: unset;
+  }
+
+  .passwordContainer {
+    width: 100%;
+  }
+
+  .flexRow {
+    flex-direction: column;
+  }
+}

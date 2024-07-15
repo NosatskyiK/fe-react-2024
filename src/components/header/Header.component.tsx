@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 
-import cartWhite from '@/assets/img/headerImg/cartWhite.png';
-import login from '@/assets/img/headerImg/login.png';
 import logoMA from '@/assets/img/headerImg/logoMA.png';
-import signUp from '@/assets/img/headerImg/signUp.png';
+import { LoginButton, Logout, SignUpButton, SignUpInActive } from '@/components/authenticationButton/AuthenticationButton.component.tsx';
+import { Cart } from '@/components/cart/Cart.component.tsx';
 import { SvgDarkThemeIcon, SvgLightThemeIcon } from '@/components/svgTheme/SvgTheme.component.tsx';
 import { setTheme } from '@/store/reducers/theme';
 import { selectedTheme } from '@/store/selector';
 
 import styles from './header.module.css';
 
-export const HeaderComponent = () => {
+export const HeaderComponent: React.FC = () => {
     const dispatch = useDispatch();
     const activeTheme = useSelector(selectedTheme);
+    const [isAuthorizedUser, setAuthorizedUser] = useState(false);
+
+    useEffect(() => {
+        const accessToken = sessionStorage.getItem('accessToken');
+        if (accessToken === null) {
+            setAuthorizedUser(false);
+        } else {
+            setAuthorizedUser(true);
+        }
+    }, [isAuthorizedUser]);
 
     const changeTheme = (theme: string) => {
         dispatch(setTheme(theme));
         localStorage.setItem('themeUser', theme);
     };
-
     return (
         <header className={styles.header}>
             <img className={styles.logoMA} src={logoMA} alt="Logo Masters academy" />
@@ -62,18 +70,19 @@ export const HeaderComponent = () => {
                 </ul>
             </nav>
             <div className={styles.accountOptions}>
-                <button className={styles.cartBtn}>
-                    <img className={styles.cartWhite} src={cartWhite} alt="cart of user" />
-                </button>
+                <Cart isHeader />
                 <div className={styles.userAuthorization}>
-                    <button className={styles.loginIn}>
-                        <img className={styles.loginInImg} src={login} alt="Login" />
-                        Login
-                    </button>
-                    <button className={styles.signUp}>
-                        <img className={styles.loginInImg} src={signUp} alt="sign up" />
-                        Sign up
-                    </button>
+                    {isAuthorizedUser ? (
+                        <>
+                            <Logout />
+                            <SignUpInActive />
+                        </>
+                    ) : (
+                        <>
+                            <LoginButton />
+                            <SignUpButton />
+                        </>
+                    )}
                 </div>
                 <div className={styles.burgerMenu}>
                     <div className={styles.burgerLine} />

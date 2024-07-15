@@ -16,7 +16,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             </button>
             <div className={styles.cardBuy}>
                 <span className={styles.cardPrice}>{product.price} </span>
-                <Cart />
+                <Cart isHeader={false} />
             </div>
         </div>
     );
