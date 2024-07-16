@@ -38,10 +38,14 @@ export const LoginPage: React.FC = () => {
             setErrorMessage('Invalid email or password. Please try again.');
         }
     };
+
+    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        handleSubmit(event);
+    };
     return (
         <div className={`${styles.loginContainer} ${styles.flexContainer}`}>
             <h2 className={styles.titleForm}>Login</h2>
-            <form onSubmit={handleSubmit} className={`${styles.form} ${styles.flexContainer}`}>
+            <form onSubmit={handleFormSubmit} className={`${styles.form} ${styles.flexContainer}`}>
                 <Login
                     email={email}
                     password={password}
