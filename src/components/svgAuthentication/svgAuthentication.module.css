@@ -1,0 +1,21 @@
+.svgIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.pathSvgIcon {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+}
+
+.svgShowPassword {
+  width: 22px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.pathShowPassword {
+  stroke: var(--color-border-button);
+  stroke-width: 1.5;
+}

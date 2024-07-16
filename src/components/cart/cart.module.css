@@ -25,3 +25,13 @@
   top: -32px;
   left: 12px;
 }
+
+.cartBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--cart-theme-dark);
+  width: 19px;
+  height: 18px;
+}

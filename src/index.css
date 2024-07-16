@@ -23,6 +23,9 @@
   --cart-theme-light: #111;
   --cart-theme-dark: #FFF;
 
+  --signUp-button-txt-light: #111;
+  --signUp-button-txt-dark: #FFF;
+
   --background-button: #EF4934
 }
 
@@ -35,6 +38,7 @@
   --color-border-card: var(--color-border-button-light);
   --border-filter-button: var(--border-filter-button-light);
   --cart: var(--cart-theme-light);
+  --signUp-txt: var(--signUp-button-txt-light)
 }
 
 .darkTheme {
@@ -46,4 +50,5 @@
   --color-border-card: var(--color-border-button-dark);
   --border-filter-button: var(--border-filter-button-dark);
   --cart: var(--cart-theme-dark);
+  --signUp-txt: var(--signUp-button-txt-dark)
 }

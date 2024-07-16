@@ -1,0 +1,33 @@
+.logout, .loginIn, .signUp, .signUpInActive {
+  border-radius: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout, .loginIn, .signUp {
+  background-color: var(--bg-secondary-dark);
+  color: #FFF;
+  border: none;
+}
+
+.signUpInActive {
+  background-color: unset;
+  color: #656565;
+  border: 1px solid #656565;
+  cursor: unset;
+}
+
+.signUp {
+  background-color: var(--background-button);
+}
+
+.loginIn {
+  background-color: var(--bg-secondary-dark);
+}

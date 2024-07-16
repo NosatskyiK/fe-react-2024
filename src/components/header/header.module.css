@@ -21,7 +21,7 @@
   gap: 10px;
 }
 
-.themeDayBtn, .themeNightBtn, .cartBtn {
+.themeDayBtn, .themeNightBtn {
   background: none;
   border: none;
   cursor: pointer;
@@ -75,44 +75,6 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-}
-
-.loginIn, .signUp {
-  background-color: var(--bg-secondary-dark);
-  border-radius: 40px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.loginInImg {
-  width: 16px;
-  height: 16px;
-}
-
-.signUpImg {
-  width: 19px;
-  height: 15px;
-}
-
-.signUp {
-  background-color: var(--background-button);
-}
-
-.loginIn {
-  background-color: var(--bg-secondary-dark);
-}
-
-.cartWhite {
-  width: 19px;
-  height: 18px;
 }
 
 /* burger menu */

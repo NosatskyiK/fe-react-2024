@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { CountProduct } from '@/components/CountProducts/CountProduct.tsx';
 import { FiltersBar } from '@/components/filtersBar/FiltersBar.component.tsx';
 import { Loading } from '@/components/loading/Loading.component.tsx';
 import { Pagination } from '@/components/pagination/Pagination.component.tsx';
@@ -15,12 +16,15 @@ export const Products = () => {
     const [isLoading, setLoading] = useState(true);
     const [filter, setFilter] = useState(0);
     const [sortOption, setSortOption] = useState('');
+    const [countProduct, setCountProducts] = useState(0);
+    const [currentCountProduct, setCurrentCountProduct] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const getAllProduct = await fetch(`https://ma-backend-api.mocintra.com/api/v1/products`);
                 const allProduct = await getAllProduct.json();
+                setCountProducts(allProduct.total);
                 setTotalPage(Math.ceil(allProduct.total / countProductsOnPage));
                 const offset = (currentPage - 1) * countProductsOnPage;
                 const sortField = getSortFieldFromOption(sortOption);
@@ -30,7 +34,8 @@ export const Products = () => {
                 );
                 const result = await response.json();
                 setData(result.products);
-                setTimeout(() => setLoading(false), 1000);
+                setCurrentCountProduct(result.total);
+                setLoading(false);
             } catch (error) {
                 console.error(`Error fetching data:`, error);
             }
@@ -40,7 +45,6 @@ export const Products = () => {
     const handleQueryParameter = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInput(event.target.value);
     };
-
     const handleSearchButtonClick = () => {
         setQuery(searchInput);
         setCurrentPage(1);
@@ -99,6 +103,7 @@ export const Products = () => {
                         searchInput={searchInput}
                         onSortChange={handleSortChange}
                     />
+                    <CountProduct countProduct={countProduct} currentCountProduct={currentCountProduct} />
                     <ProductList products={data} />
                     {data.length > 0 && <Pagination totalPage={totalPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />}
                 </>
