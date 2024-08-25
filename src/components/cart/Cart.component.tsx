@@ -14,6 +14,7 @@ interface CartProps {
 
 export const Cart: React.FC<CartProps> = ({ isHeader }) => {
     const navigate = useNavigate();
+
     const [hasCount, setCount] = useState(false);
     const addCountCircle = () => {
         setCount(!hasCount);

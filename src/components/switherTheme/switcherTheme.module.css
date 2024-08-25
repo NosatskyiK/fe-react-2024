@@ -1,0 +1,36 @@
+.switcherTheme {
+  align-items: center;
+  gap: 10px;
+}
+
+.themeDayBtn, .themeNightBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.vertLine {
+  background-color: var(--txt-secondary-light);
+  width: 2px;
+  height: 20px;
+}
+
+.switcherThemeHeader {
+  display: flex;
+}
+
+.switcherThemeBurger {
+  display: none;
+}
+
+@media (max-width: 680px) {
+
+  .switcherThemeHeader {
+    display: none;
+  }
+
+  .switcherThemeBurger {
+    display: flex;
+  }
+}

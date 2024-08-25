@@ -1,94 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 
 import logoMA from '@/assets/img/headerImg/logoMA.png';
-import { LoginButton, Logout, SignUpButton, SignUpInActive } from '@/components/authenticationButton/AuthenticationButton.component.tsx';
+import { BurgerMenu } from '@/components/burgerMenu/BurgerMenu.component.tsx';
 import { Cart } from '@/components/cart/Cart.component.tsx';
-import { SvgDarkThemeIcon, SvgLightThemeIcon } from '@/components/svgTheme/SvgTheme.component.tsx';
-import { setTheme } from '@/store/reducers/theme';
-import { selectedTheme } from '@/store/selector';
+import { Navigation } from '@/components/navigation/Navigation.component.tsx';
+import { SwitcherTheme } from '@/components/switherTheme/SwitcherTheme.component.tsx';
+import { UserAuthorization } from '@/components/userAuthorization/UserAuthorization.component.tsx';
+import { setBurgerOpen } from '@/store/reducers/burger';
+import { openBurgerMenu } from '@/store/selector';
 
 import styles from './header.module.css';
 
-export const HeaderComponent: React.FC = () => {
+export const HeaderComponent = () => {
     const dispatch = useDispatch();
-    const activeTheme = useSelector(selectedTheme);
-    const [isAuthorizedUser, setAuthorizedUser] = useState(false);
-
+    const burgerOpen = useSelector(openBurgerMenu);
     useEffect(() => {
-        const accessToken = sessionStorage.getItem('accessToken');
-        if (accessToken === null) {
-            setAuthorizedUser(false);
-        } else {
-            setAuthorizedUser(true);
-        }
-    }, [isAuthorizedUser]);
+        document.body.style.overflow = burgerOpen ? 'hidden' : 'auto';
 
-    const changeTheme = (theme: string) => {
-        dispatch(setTheme(theme));
-        localStorage.setItem('themeUser', theme);
-    };
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [burgerOpen]);
     return (
         <header className={styles.header}>
             <img className={styles.logoMA} src={logoMA} alt="Logo Masters academy" />
-            <div className={styles.switcherTheme}>
-                <button
-                    className={clsx(styles.themeDayBtn, { [styles.activeTheme]: activeTheme === 'light' })}
-                    onClick={() => {
-                        changeTheme('light');
-                        localStorage.setItem('themeUser', 'light');
-                    }}
-                >
-                    <SvgLightThemeIcon activeTheme={activeTheme} />
-                </button>
-                <div className={styles.vertLine}></div>
-                <button
-                    className={clsx(styles.themeNightBtn, { [styles.activeTheme]: activeTheme === 'dark' })}
-                    onClick={() => {
-                        changeTheme('dark');
-                        localStorage.setItem('themeUser', 'dark');
-                    }}
-                >
-                    <SvgDarkThemeIcon activeTheme={activeTheme} />
-                </button>
-            </div>
-            <nav>
-                <ul className={styles.navMenu}>
-                    <li className={styles.menuItem}>
-                        <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/">
-                            About
-                        </NavLink>
-                    </li>
-                    <li className={styles.menuItem}>
-                        <NavLink className={({ isActive }) => clsx(styles.menuBtn, { [styles.activePage]: isActive })} to="/products">
-                            Products
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
+            <SwitcherTheme location={'header'} />
+            <Navigation location={'header'} />
             <div className={styles.accountOptions}>
                 <Cart isHeader />
-                <div className={styles.userAuthorization}>
-                    {isAuthorizedUser ? (
-                        <>
-                            <Logout />
-                            <SignUpInActive />
-                        </>
-                    ) : (
-                        <>
-                            <LoginButton />
-                            <SignUpButton />
-                        </>
-                    )}
-                </div>
-                <div className={styles.burgerMenu}>
-                    <div className={styles.burgerLine} />
-                    <div className={styles.burgerLine} />
-                </div>
+                <UserAuthorization location={'header'} />
+                <button onClick={() => dispatch(setBurgerOpen(!burgerOpen))} className={styles.burgerMenu}>
+                    <div className={clsx(styles.burgerLineUp, { [styles.burgerLineUpActive]: burgerOpen === true })} />
+                    <div className={clsx(styles.burgerLineDown, { [styles.burgerLineDownActive]: burgerOpen === true })} />
+                </button>
             </div>
+            {burgerOpen && <BurgerMenu />}
         </header>
     );
 };

@@ -13,54 +13,6 @@
   height: 46px;
 }
 
-/* styles for switcher theme */
-
-.switcherTheme {
-  display: inherit;
-  align-items: center;
-  gap: 10px;
-}
-
-.themeDayBtn, .themeNightBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.vertLine {
-  background-color: var(--txt-secondary-light);
-  width: 2px;
-  height: 20px;
-}
-
-/* styles for navigation menu */
-
-.navMenu {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  padding: 0;
-}
-
-.menuItem {
-  list-style: none;
-}
-
-.menuBtn {
-  color: #FFF;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.activePage {
-  font-weight: 700;
-}
-
 /* Store productPage authorization and cart */
 
 .accountOptions {
@@ -70,38 +22,39 @@
   gap: 30px;
 }
 
-.userAuthorization {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
 /* burger menu */
 
 .burgerMenu {
   display: none;
 }
 
-.burgerLine {
-  width: 23px;
-  height: 2px;
-  background-color: var(--bg-primary-light);
-}
-
-@media (max-width: 630px) {
+@media (max-width: 680px) {
 
   .header {
     padding: 0 20px;
-  }
-
-  .switcherTheme, .navMenu, .userAuthorization {
-    display: none;
   }
 
   .burgerMenu {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border: none;
+    background-color: unset;
+  }
+
+  .burgerLineUp, .burgerLineDown {
+    width: 23px;
+    height: 2px;
+    background-color: var(--bg-primary-light);
+    transform: rotate(0deg);
+    transition: transform 500ms;
+  }
+
+  .burgerLineUpActive {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .burgerLineDownActive {
+    transform: translateY(-5px) rotate(-45deg);
   }
 }

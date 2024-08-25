@@ -1,0 +1,37 @@
+.userAuthorization {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.userAuthorizationHeader {
+  display: flex;
+}
+
+.userAuthorizationBurger {
+  display: none;
+}
+
+.authorizationButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 680px) {
+
+  .userAuthorizationHeader {
+    display: none;
+  }
+
+  .userAuthorizationBurger {
+    display: flex;
+  }
+
+  .authorizationButton {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

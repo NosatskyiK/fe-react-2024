@@ -1,3 +1,12 @@
 .cartPageContainer {
-  height: 100vh;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainText {
+  height: 80vh;
+  margin: 100px 20px;
+  text-align: center;
 }
